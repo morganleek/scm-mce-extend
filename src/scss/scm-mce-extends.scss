@@ -1,0 +1,68 @@
+%scm-mce-button {
+  border: 1px solid;
+  display: inline-block;
+  padding: 10px 5px;
+  text-decoration: none;
+}
+
+.scm-mce-button,
+.mce-content-body a.scm-mce-button[data-mce-selected] {
+  @extend %scm-mce-button;
+}
+
+body#tinymce.wp-editor.content {
+  hr:not(.is-style-dots) {
+    &.scm-mce-spacer {
+      &:before {
+        content: "Spacer: Desktop " attr(data-desktop) ", Mobile " attr(data-mobile);
+        position: absolute;
+        width: 100%;
+        transform: translate(0, -50%);
+        left: 0;
+        background: #0000;
+        height: auto;
+        top: 50%;
+        font-size: 13px;
+        text-align: center;
+      }
+      &:after {
+        display: none;
+      }
+      display: inline-block;
+      width: 100%;
+      height: var(--spacer-desktop-height);
+      min-height: 50px;
+      border: 2px dashed grey;
+      background: transparent;
+      margin: 0;
+    }
+  }
+  .scm-mce-link-wrapper,
+  .scm-mce-download-wrapper {
+    border: 2px solid grey;
+    padding: 0 10px;
+    position: relative;
+    & > span {
+      display: block;
+    }
+    .link {
+      font-size: 0;
+      & > a {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        &:before {
+          content: "URL: " attr(href);
+          width: 100px;
+          font-size: 13px;
+          text-align: right;
+          text-overflow: ellipsis;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
