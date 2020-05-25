@@ -10,7 +10,8 @@
   @extend %scm-mce-button;
 }
 
-body#tinymce.wp-editor.content {
+body#tinymce.wp-editor.content,
+body#tinymce.wp-editor.acf_content {
   hr:not(.is-style-dots) {
     &.scm-mce-spacer {
       &:before {
