@@ -118,7 +118,7 @@
         tinymce.activeEditor.execCommand('mceInsertContent', false, '<p class="scm-mce-link-wrapper">' + 
           '<span class="link"><a href="' + url + '">&nbsp;</a></span>' +
           '<span class="title">' + title + '</span>' + 
-          '<span class="content small">&hellip;</span>' + 
+          '<span class="content small">Short description&hellip;</span>' + 
         '</p>');
       }
       
@@ -162,7 +162,7 @@
         tinymce.activeEditor.execCommand('mceInsertContent', false, '<p class="scm-mce-download-wrapper">' + 
           '<span class="link"><a href="' + url + '">&nbsp;</a></span>' +
           '<span class="title">' + title + '</span>' + 
-          '<span class="content small">&hellip;</span>' + 
+          '<span class="content small">Short description&hellip;</span>' + 
         '</p>');
       }
       
