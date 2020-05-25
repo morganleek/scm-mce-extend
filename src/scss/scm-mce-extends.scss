@@ -54,6 +54,8 @@ body#tinymce.wp-editor.acf_content {
         top: 10px;
         right: 10px;
         bottom: 10px;
+        left: auto;
+        width: 80px;
         &:before {
           content: "URL: " attr(href);
           width: 100px;
