@@ -55,16 +55,27 @@ body#tinymce.wp-editor.acf_content {
         right: 10px;
         bottom: 10px;
         left: auto;
-        width: 80px;
+        width: 56px;
         &:before {
           content: "URL: " attr(href);
-          width: 100px;
+          width: auto;
           font-size: 13px;
           text-align: right;
           text-overflow: ellipsis;
           display: block;
           white-space: nowrap;
-          overflow: hidden;
+          position: absolute;
+          top: 7px;
+          right: 2px;
+          z-index: 9999;
+          text-indent: 0;
+          opacity: 0.25;
+          transition: opacity 0.3s;
+        }
+        &[data-mce-selected="inline-boundary"] {
+          &:before {
+            opacity: 1;
+          }
         }
       }
     }
