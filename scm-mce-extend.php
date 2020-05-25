@@ -98,17 +98,17 @@
           array(
             'title' => 'Button',
             'selector' => 'a',
-            'classes' => 'theme-button'
+            'classes' => 'scm-mce-button'
           ),
           array(
             'title' => 'Button Light',
             'selector' => 'a',
-            'classes' => 'theme-button-light'
+            'classes' => 'scm-mce-button-light'
           ),
           array(
             'title' => 'Button Inactive',
             'selector' => 'a',
-            'classes' => 'theme-button-inactive'
+            'classes' => 'scm-mce-button-inactive'
           )
         )
       )
