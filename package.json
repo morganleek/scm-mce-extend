@@ -22,12 +22,12 @@
   },
   "homepage": "https://github.com/morganleek/scm-mce-extend#readme",
   "dependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@babel/register": "^7.8.3",
-    "autoprefixer": "^9.7.4",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.0.6",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
@@ -37,11 +37,11 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-wp-pot": "^2.3.6",
-    "gulp-zip": "^5.0.1",
+    "gulp-wp-pot": "^2.4.3",
+    "gulp-zip": "^5.0.2",
+    "vanilla-lazyload": "^13.0.1",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^5.2.1",
-    "yargs": "^15.1.0",
-    "vanilla-lazyload": "^13.0.1"
+    "yargs": "^15.4.1"
   }
 }
