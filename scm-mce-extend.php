@@ -60,6 +60,16 @@
         )
       ),
       array(
+        'title' => 'Heading Colours',
+        'items' => array(
+          array(
+            'title' => 'Gold (Dark)',
+            'selector' => 'h1,h2,h3,h4,h5,h6',
+            'classes' => 'gold-dark'
+          )
+        )
+      ),
+      array(
         'title' => 'Paragraph',
         'items' => array(
           array(
@@ -93,6 +103,16 @@
         )
       ),
       array(
+        'title' => 'Paragraph Colours',
+        'items' => array(
+          array(
+            'title' => 'Gold (Dark)',
+            'selector' => 'p',
+            'classes' => 'gold-dark'
+          )
+        )
+      ),
+      array(
         'title' => 'Links',
         'items' => array(
           array(
@@ -109,6 +129,27 @@
             'title' => 'Button Inactive',
             'selector' => 'a',
             'classes' => 'scm-mce-button-inactive'
+          )
+        )
+      ),
+      array(
+        'title' => 'Lists',
+        'items' => array(
+          array(
+            'title' => 'Two column grid',
+            'block' => 'ul',
+            'wrapper' => true,
+            'attributes' => array(
+              'class' => 'grid-two-column'
+            )
+          ),
+          array(
+            'title' => 'Three column grid',
+            'block' => 'ul',
+            'wrapper' => true,
+            'attributes' => array(
+              'class' => 'grid-three-column'
+            )
           )
         )
       )
