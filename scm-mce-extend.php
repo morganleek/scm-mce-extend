@@ -1,7 +1,7 @@
 <?php 
 /**
  * Plugin Name: SCM TinyMCE Extend
- * Version: 0.1.0
+ * Version: 0.1.2
  * Author: Morgan Leek
  */
 
@@ -172,25 +172,38 @@
       return;
     }
 
-		add_editor_style(SCM_MCE_EXTEND_ASSETS_URL . '/css/scm-mce-extends.css');
+		add_editor_style(SCM_MCE_EXTEND_ASSETS_URL . '/css/bundle.css');
     
     add_filter( 'mce_external_plugins', 'scm_mce_extend_tinymce_external_plugins');
-    add_filter( 'mce_buttons', 'scm_mce_extend_timymce_buttons');
+    add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_button', 10 );
+    add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_link_wrapper', 10 );
+    add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_download', 10 );
+    add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_spacer', 10 );
   }
 
   add_action( 'init', 'scm_mce_extend_tinymce' );
 
   function scm_mce_extend_tinymce_external_plugins($plugin_array) {
-    $plugin_array['scm_mce_extend_tinymce'] = SCM_MCE_EXTEND_ASSETS_URL . '/js/scm-mce-extends.js?v=1.0.1';
-
+    $plugin_array['scm_mce_extend_tinymce'] = SCM_MCE_EXTEND_ASSETS_URL . '/js/bundle.js?v=1.0.2';
     return $plugin_array;
   }
 
-  function scm_mce_extend_timymce_buttons($buttons_array) {
+  function scm_mce_extend_tiny_mce_button( $buttons_array ) {
     array_push( $buttons_array, 'scm_mce_extend_button' );
-    array_push( $buttons_array, 'scm_mce_extend_link_wrapper' );
-    array_push( $buttons_array, 'scm_mce_extend_download' );
-    array_push( $buttons_array, 'scm_mce_extend_spacer' );
+    return $buttons_array;
+  }
 
+  function scm_mce_extend_tiny_mce_link_wrapper( $buttons_array ) {
+    array_push( $buttons_array, 'scm_mce_extend_link_wrapper' );
+    return $buttons_array;
+  }
+
+  function scm_mce_extend_tiny_mce_download( $buttons_array ) {
+    array_push( $buttons_array, 'scm_mce_extend_download' );
+    return $buttons_array;
+  }
+
+  function scm_mce_extend_tiny_mce_spacer( $buttons_array ) {
+    array_push( $buttons_array, 'scm_mce_extend_spacer' );
     return $buttons_array;
   }
