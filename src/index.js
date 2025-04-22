@@ -1,10 +1,12 @@
+import './style.scss';
+
 (function() {
   tinymce.PluginManager.add( 'scm_mce_extend_tinymce', function( editor, url ) {
     // Button
     editor.addButton('scm_mce_extend_button', {
       title: 'Make Button',
       cmd: 'scm_mce_extend_button',
-      image: url + '/../images/scm-tinymce-button.svg'
+      image: url + '/../../images/scm-tinymce-button.svg'
     });
   
     editor.addCommand('scm_mce_extend_button', function() {
@@ -34,7 +36,7 @@
     editor.addButton('scm_mce_extend_spacer', {
       title: 'Spacer',
       cmd: 'scm_mce_extend_spacer',
-      image: url + '/../images/scm-tinymce-spacer.svg'
+      image: url + '/../../images/scm-tinymce-spacer.svg'
     });
     
     editor.addCommand('scm_mce_extend_spacer', function() {
@@ -85,7 +87,7 @@
     editor.addButton('scm_mce_extend_link_wrapper', {
       title: 'Make Link Wrapper',
       cmd: 'scm_mce_extend_link_wrapper',
-      image: url + '/../images/scm-tinymce-link-wrapper.svg'
+      image: url + '/../../images/scm-tinymce-link-wrapper.svg'
     });
 
     // var linkFrame;
@@ -129,7 +131,7 @@
     editor.addButton('scm_mce_extend_download', {
       title: 'Make Download Wrapper',
       cmd: 'scm_mce_extend_download',
-      image: url + '/../images/scm-tinymce-download.svg'
+      image: url + '/../../images/scm-tinymce-download.svg'
     });
 
     var fileFrame;

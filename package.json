@@ -1,45 +1,20 @@
 {
-  "name": "scm-mce-extend",
-  "version": "0.0.1",
-  "description": "TinyMCE Buttons and Tools for WP Classic Editor  ",
-  "main": "index.js",
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp build --prod"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/morganleek/scm-mce-extend.git"
-  },
-  "keywords": [
-    "Wordpress",
-    "MCE"
-  ],
-  "author": "Morgan Leek",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/morganleek/scm-mce-extend/issues"
-  },
-  "homepage": "https://github.com/morganleek/scm-mce-extend#readme",
-  "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
-    "@babel/register": "^7.13.16",
-    "autoprefixer": "^10.2.5",
-    "babel-loader": "^8.2.2",
-    "browser-sync": "^2.26.14",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-dart-sass": "^1.0.2",
-    "gulp-if": "^3.0.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-replace": "^1.1.3",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-wp-pot": "^2.5.0",
-    "vinyl-named": "^1.1.0",
-    "webpack-stream": "^6.1.2",
-    "yargs": "^7.1.2"
-  }
+	"name": "scm-mce-extended",
+	"version": "1.0.1",
+	"description": "TinyMCE Buttons and Tools for WP Classic Editor",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build --blocks-manifest",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start --blocks-manifest"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.15.0"
+	}
 }
