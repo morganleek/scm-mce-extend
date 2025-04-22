@@ -32,6 +32,60 @@ import './style.scss';
       return;
     });
 
+    // Transcript
+    editor.addButton('scm_mce_extend_transcript', {
+      title: 'Transcript',
+      cmd: 'scm_mce_extend_transcript',
+      image: url + '/../../images/scm-tinymce-transcript.svg'
+    });
+    
+    editor.addCommand('scm_mce_extend_transcript', function() {
+      var node = editor.selection.getNode();
+      var label, copy = '<p>Insert copy here...</p>';
+
+      if( node.closest( '.scm-mce-transcript' ) ) {
+        node = node.closest( '.scm-mce-transcript' );
+      }
+
+      // Get details if they exist already
+      if(node.classList.contains('scm-mce-transcript')) {
+        label = (node.dataset.label !== undefined) ? node.dataset.label : 'Transcript';
+        copy = node.querySelector(".copy")?.innerHTML;
+      }
+      
+      // Open Dialogue
+      editor.windowManager.open({
+        title: 'Insert Transcript',
+        body: [
+          {
+            name: 'label',
+            label: 'Label',
+            type: 'textbox',
+            size: 40,
+            value: label
+          },
+          // {
+          //   name: 'copy',
+          //   label: 'Transcript Copy',
+          //   type: 'textbox',
+          //   size: 10000,
+          //   multiline: true,
+          //   value: copy
+          // }
+        ],
+        onSubmit: function (api) {
+          // console.log( api );
+          // console.log( copy );
+          var label = (api.data !== undefined) ? api.data.label : '';
+          // var copy = (api.data !== undefined) ? api.data.copy : '';
+          node.remove();
+          tinymce.activeEditor.execCommand( 'mceInsertContent', false, `<div class="scm-mce-transcript" data-label="${label}"><p class="expand-transcript"><a href="#">${label}</a></p><div class="copy">${copy}</div></div>` );
+        }
+      });
+      
+      return;
+    });
+
     // Spacer 
     editor.addButton('scm_mce_extend_spacer', {
       title: 'Spacer',
@@ -44,7 +98,7 @@ import './style.scss';
       var mobileHeight, desktopHeight = '';
       
       // Get details if they exist already
-      console.log(node.classList);
+      // console.log(node.classList);
       if(node.classList.contains('scm-mce-spacer')) {
         // var parent = node.parentNode;
         
@@ -56,7 +110,7 @@ import './style.scss';
       
       // Open Dialogue
       editor.windowManager.open({
-        title: 'Insert Link',
+        title: 'Insert Spacer',
         body: [
           {
             name: 'desktopHeight',
@@ -76,6 +130,9 @@ import './style.scss';
         onSubmit: function (api) {
           var mobileHeight = (api.data !== undefined) ? api.data.mobileHeight : '';
           var desktopHeight = (api.data !== undefined) ? api.data.desktopHeight : '';
+          // Conver to int and add 'px'
+          mobileHeight = parseInt( mobileHeight ) + "px";
+          desktopHeight = parseInt( desktopHeight ) + "px";
           tinymce.activeEditor.execCommand('mceInsertContent', false, '<hr class="scm-mce-spacer" style="--spacer-desktop-height: ' + desktopHeight + '; --spacer-mobile-height: ' + mobileHeight + ';" data-desktop="' + desktopHeight + '" data-mobile="' + mobileHeight + '" />');
         }
       });
@@ -112,7 +169,6 @@ import './style.scss';
           break;
         default:
           return;
-          break;
       }
 
       if(title !== '' && url !== '#') {
@@ -156,7 +212,6 @@ import './style.scss';
           break;
         default:
           return;
-          break;
       }
 
       if(title !== '' && url !== '#') {

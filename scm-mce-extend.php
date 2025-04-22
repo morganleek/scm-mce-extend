@@ -37,6 +37,7 @@ function scm_mce_extend_tinymce() {
 	// add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_link_wrapper', 10 );
 	// add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_download', 10 );
 	add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_spacer', 10 );
+	add_filter( 'mce_buttons', 'scm_mce_extend_tiny_mce_transcript', 10 );
 }
 
 // TinyMCE
@@ -210,5 +211,10 @@ function scm_mce_extend_tiny_mce_download( $buttons_array ) {
 
 function scm_mce_extend_tiny_mce_spacer( $buttons_array ) {
 	array_push( $buttons_array, 'scm_mce_extend_spacer' );
+	return $buttons_array;
+}
+
+function scm_mce_extend_tiny_mce_transcript( $buttons_array ) {
+	array_push( $buttons_array, 'scm_mce_extend_transcript' );
 	return $buttons_array;
 }

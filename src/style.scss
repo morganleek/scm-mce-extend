@@ -80,4 +80,23 @@ body#tinymce.wp-editor.acf_content {
       }
     }
   }
+  .scm-mce-transcript {
+    border: 2px dashed;
+    padding: 0 20px 0;
+    position: relative;
+    // &:not(.expanded) > * {
+    //   display: none;
+    // }
+    // &::before {
+    //   content: attr(data-label) " (Edit)";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   background: #f0f0f0;
+    //   padding: 2px 12px;
+    //   font-size: 0.875rem;
+    //   display: block !important;
+    //   text-decoration: underline;
+    // }
+  }
 }
