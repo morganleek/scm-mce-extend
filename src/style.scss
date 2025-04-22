@@ -84,6 +84,32 @@ body#tinymce.wp-editor.acf_content {
     border: 2px dashed;
     padding: 0 20px 0;
     position: relative;
+    & > p {
+      margin-bottom: 0.25em;
+      a {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        border: 1px solid #fff;
+        font-family: "plau";
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        text-decoration: none;
+        &::after {
+          content: "+";
+          font-size: 20px;
+          width: 10px;
+          margin-left: 5px;
+          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
     // &:not(.expanded) > * {
     //   display: none;
     // }
